@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    scrollbar-width: none;
+    font-family: var(--font-db);
+  }
+
+  h3 {
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    font-weight: 700;
+  }
+}
+
+@theme {
+  --breakpoint-lg: 991px;
+  --dropbox-color: #0061fe;
+  --dropbox-btn-size: 90px;
+  --dropbox-left: calc(var(--dropbox-btn-size) / -6);
+  --dropbox-bottom: 50%;
+  --dropbox-transform: translate(calc(50vw - var(--dropbox-btn-size) / 3), 50%);
+
+  --nav-tile-gap: 10px;
+}
+
+@media screen and (max-width: 991px) {
+  :root {
+    --dropbox-btn-size: 64px;
+    --dropbox-transform: translate(-50%, calc(-50dvh - var(--dropbox-btn-size) * 3 / -8));
+    --dropbox-left: 50%;
+    --dropbox-bottom: calc(var(--dropbox-btn-size) / -8);
+
+    --nav-tile-gap: 5px;
+  }
+}
+
+@font-face {
+  font-family: db;
+  font-weight: 400;
+  font-display: swap;
+  src: url('db.ttf') format('ttf'),
+}
+
+@theme {
+  --font-db: 'db', Arial, sans-serif;
+}
